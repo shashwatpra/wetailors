@@ -1,0 +1,100 @@
+<section class="content-header">
+    <h1>
+        Product Sleeve Style
+        <small>Add</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-bars"></i> Product Sleeve Style</a></li>
+        <li class="active">Add</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Add Product Sleeve Style</h3>
+                     <!--<div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+            </div>-->
+                </div><!-- /.box-header -->
+                <form role="form" name="myform" ng-if="login.loggedIn" method="post" ng-submit="productsSleeve.AddSleeveProduct()">
+                    <div class="box-body">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="BackProductselectedVal">Front Style Product:</label>
+                                    <input type="text" ng-model="FrontProductselectedVal" class="form-control" id="FrontProductselectedVal" disabled>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="BackProductselectedVal">Back Style Product:</label>
+                                    <select ng-change="productsSleeve.onBackProductChange(BackProductselectedVal)" class="form-control" id="BackProductselectedVal" ng-model="BackProductselectedVal">
+                                        <option  ng-repeat="obj in productsSleeve.backproductdata" value="{{obj._id}}" newval="{{obj.FrontStyleID.FrontStyleType}}">                                   {{obj.BackTypeStyle}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="BackStyleType">Sleeve Style Type:</label>
+                                    <input type="text" class="form-control" ng-model="productsSleeve.productSleevedtls.SleeveStyleType" id="SleeveStyleType" placeholder="Sleeve Style Type">
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="ImagePath">Image Path:</label>
+                                    <input type="text" class="form-control" ng-model="productsSleeve.productSleevedtls.ImagePath" id="ImagePath" placeholder="ImagePath">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <button type="submit" class="btn btn-success">Add</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </form>
+            </div>
+        </div>
+    </div>
+      <div class="row">
+    <div class="col-md-12">
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title">Back Style Product List</h3>
+            <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+            </div>
+        </div>
+          
+        <div class="box-body">
+            
+          <table id="SleeveStyleProductList" class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                    <th style="display:none;">_id</th>
+                    <th>No.</th>
+                    <th>Back Style Type</th>
+                    <th>Sleeve Style Type</th>
+                    <th>Image Path</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="product in productsSleeve.productSleevedtls">
+                    <td style="display:none;">{{product._id}}</td>
+                    <td>1</td>                        
+                    <td>{{product.BackStyleID.BackTypeStyle}}</td>
+                    <td>{{product.SleeveTypeStyle}}</td>
+                    <td>{{product.ImagePath}}</td>
+                </tr>
+              </tbody>
+          </table>
+        </div><!-- /.box-body -->
+          
+      </div><!-- /.box -->
+    </div>
+  </div>
+
+    
+</section>

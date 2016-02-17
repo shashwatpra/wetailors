@@ -1,0 +1,42 @@
+<section class="content-header">
+          <h1>
+            Product
+            <small>Product Front Style List</small>
+          </h1>
+          <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-bars"></i> Product</a></li>
+            <li class="active">Product  Front Style</li>
+          </ol>
+        </section>
+<section class="content">
+<div class="row">
+    <div class="col-xs-12">
+      <div class="box">
+        <div class="box-header">
+          <h3 class="box-title">Product  Front Style List</h3>
+        </div><!-- /.box-header -->
+        <div class="box-body">
+          <table id="productFrontStyle" class="table table-bordered table-hover">
+              <thead>
+            <tr>
+                <th>No.</th>
+                <th>Product Category</th>
+                <th>Front Style</th>
+                <th>Image Path</th>
+            </tr>
+              </thead>
+              <tbody>
+            <tr ng-repeat="products in productsFront.productFrontdtls">
+                <!--<td style="display:none;">{{user._id}}</td>-->
+                <td>1</td>
+                <td>{{products.ProductID.ProductName}}</td>
+                <td>{{products.FrontStyleType}}</td>
+                <td>{{products.ImagePath}}</td>
+            </tr>
+                  </tbody>
+          </table>
+        </div><!-- /.box-body -->
+      </div><!-- /.box -->
+    </div>
+  </div>
+</section>

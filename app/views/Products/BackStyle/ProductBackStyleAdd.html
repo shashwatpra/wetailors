@@ -1,0 +1,108 @@
+<section class="content-header">
+    <h1>
+        Product Back Style
+        <small>Add</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-bars"></i> Product Back Style</a></li>
+        <li class="active">Add</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Add Product Front Style</h3>
+                     <!--<div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+            </div>-->
+                </div><!-- /.box-header -->
+                <form role="form" name="myform" ng-if="login.loggedIn" method="post" ng-submit="productsBack.AddBackProduct()">
+                    <div class="box-body">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="FrontProductselectedVal">Front Style Product:</label>
+                                    <select ng-change="productsBack.onFrontProductChange(FrontProductselectedVal)" class="form-control" id="FrontProductselectedVal" ng-model="FrontProductselectedVal">
+                                        <option  ng-repeat="obj in productsBack.frontproductdata" value="{{obj._id}}">                                   {{obj.FrontStyleType}}
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-6">
+                                    
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="BackStyleType">Back Style Type:</label>
+                                    <input type="text" class="form-control" ng-model="productsBack.productBackdtls.BackStyleType" id="BackStyleType" placeholder="Back Style Type">
+                                </div>
+                                <div class="col-sm-6">
+                                    
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="ImagePath">Image Path:</label>
+                                    <input type="text" class="form-control" ng-model="productsBack.productBackdtls.ImagePath" id="ImagePath" placeholder="ImagePath">
+                                </div>
+                                <div class="col-sm-6">
+                                    <!--<label for="Address1">Address 1:</label>
+                                    <textArea type="text" name="Address1" class="form-control" ng-model="Addusers.userdata.Address1"></textArea>-->
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <button type="submit" class="btn btn-success">Add</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </form>
+            </div>
+        </div>
+    </div>
+      <div class="row">
+    <div class="col-md-12">
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title">Back Style Product List</h3>
+            <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+            </div>
+        </div>
+          
+        <div class="box-body">
+            
+          <table id="BackStyleProductList" class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                    <th style="display:none;">_id</th>
+                    <th>No.</th>
+                    <th>Front Style Type</th>
+                    <th>Back Style Type</th>
+                    <th>Image Path</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="product in productsBack.productBackdtls">
+                    <td style="display:none;">{{product._id}}</td>
+                    <td>1</td>                        
+                    <td>{{product.FrontStyleID.FrontStyleType}}</td>
+                    <td>{{product.BackTypeStyle}}</td>
+                    <td>{{product.ImagePath}}</td>
+                </tr>
+              </tbody>
+          </table>
+        </div><!-- /.box-body -->
+          
+      </div><!-- /.box -->
+    </div>
+  </div>
+
+    
+</section>

@@ -1,0 +1,40 @@
+<div ng-controller="UpdateUsersController as updateUsers">
+<form class="form-sigin" ng-if="login.loggedIn" method="post" ng-submit="updateUsers.UpdateUser()">
+    <input type="hidden" name="_id" ng-model="updateUsers.userdata[0]._id">
+    
+	First Name: <input type="text" name="FirstName" class="form-control" ng-model="updateUsers.userdata[0].FirstName">
+	Last Name: <input type="text" name="LastName" class="form-control" ng-model="updateUsers.userdata[0].LastName">
+	Gender: <select name="Gender" class="form-control" id="Gender" ng-model="updateUsers.userdata[0].Gender">
+                <option value="">---Please select---</option> <!-- not selected / blank option -->
+                <option value="M">Male</option> <!-- interpolation -->
+                <option value="F">Female</option>
+            </select>
+    Mobile Number: <input type="text" name="EmailAddress" class="form-control" ng-model="updateUsers.userdata[0].MobileNo">
+    Email: <input type="text" name="EmailAddress" class="form-control" ng-model="updateUsers.userdata[0].EmailAddress">
+    Address1: <textArea type="text" name="Address1" class="form-control" ng-model="updateUsers.userdata[0].Address1"></textArea>
+    Address2: <textArea type="text" name="Address2" class="form-control" ng-model="updateUsers.userdata[0].Address2"></textArea>
+    Address3: <textArea type="text" name="Address3" class="form-control" ng-model="updateUsers.userdata[0].Address3"></textArea>
+    Country:<select class="form-control" ng-model="CountryselectedVal" ng-change="updateUsers.onCountryChange(CountryselectedVal)" disabled>
+                <option  ng-repeat="obj in updateUsers.countrydata" value="{{obj._id}}">                                 {{obj.CountryName}}
+                </option>
+            </select>
+    State:<select class="form-control" ng-model="StateselectedVal" ng-change="updateUsers.onStateChange(StateselectedVal)">
+                <option  ng-repeat="obj in updateUsers.statedata" value="{{obj._id}}">                                     {{obj.State}}
+                </option>
+          </select>
+    City:<select class="form-control" ng-model="CityselectedVal" ng-change="updateUsers.onCityChange(CityselectedVal)">
+                <option  ng-repeat="obj in updateUsers.citydata" value="{{obj._id}}">                                       {{obj.City}}
+                </option>
+        </select>
+     Area:<select class="form-control" ng-model="AreaselectedVal" ng-change="updateUsers.onAreaChange(AreaselectedVal)">
+                <option  ng-repeat="obj in updateUsers.areadata" value="{{obj._id}}">                                       {{obj.Area}}
+                </option>
+        </select>
+    Pincode: <input type="text"  name="Pincode" class="form-control" ng-model="updateUsers.userdata[0].Pincode" >
+    Landmark: <input type="text"  name="Landmark" class="form-control" ng-model="updateUsers.userdata[0].Landmark" >
+    UserName: <input type="text"  name="UserName" class="form-control" ng-model="updateUsers.userdata[0].UserName" disabled>
+	password: <input id="password" type="Password" name="password" class="form-control" ng-model="updateUsers.userdata[0].Password">
+	Show Password<input type="checkbox" class="form-control" title="Show Password" ng-click="updateUsers.showHindPassword()" />
+	<button type="submit" class="btn btn-success">Update</button>
+</form>
+</div>

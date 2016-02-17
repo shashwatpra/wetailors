@@ -1,0 +1,11 @@
+<div ng-controller="UpdateUsersController as updateUsers">
+    <form class="form-sigin" ng-if="login.loggedIn" method="post" ng-submit="updateUsers.UpdateUser()">
+        <!--Area:<select class="form-control" ng-model="updateUsers.userdata[0].AreaID._id" ng-selected="selectedVal" ng-change="updateUsers.onAreaChange(updateUsers.areadata)">
+                <option  ng-repeat="obj in updateUsers.areadata"   value="{{obj._id}}">                                       {{obj.Area}}
+                </option>
+        </select>-->
+        
+       <select class="form-control" ng-model="selectedVal" ng-options="version._id as version.Area for version in updateUsers.areadata" ng-change="updateUsers.onAreaChange(updateUsers.areadata)">
+        </select>
+    </form>
+</div>
